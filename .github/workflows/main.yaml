@@ -1,0 +1,71 @@
+name: CI run
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    timeout-minutes: 500
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: update packages
+      run: |
+        sudo apt update
+        sudo apt-get upgrade
+    
+    # set up gcc
+    - name: install gcc
+      run: sudo apt-get install gcc
+      
+    # set up cmake
+    - name: install cmake
+      run: sudo apt-get install cmake
+      
+    # set up build-essential
+    - name: install build-essential
+      run: sudo apt-get install build-essential
+      
+    # set up libfftw3-dev
+    - name: install libfftw3-dev
+      run: sudo apt-get install libfftw3-dev
+    
+    # set up gromacs
+    - name: install gromacs
+      run: sudo apt-get install gromacs
+      
+    # Runs the main script script
+    - name: Run script
+      run: ./run.sh
+      
+    - name: Commit files
+      id: commit
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "github-actions"
+        git add --all
+        if [ -z "$(git status --porcelain)" ]; then
+           echo "::set-output name=push::false"
+        else
+           git commit -m "Add changes"
+           echo "::set-output name=push::true"
+        fi
+      shell: bash
+    - name: Push changes
+      if: steps.commit.outputs.push == 'true'
+      uses: ad-m/github-push-action@master
+      with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+      
+    
+      
+      
+      
+      
+            
