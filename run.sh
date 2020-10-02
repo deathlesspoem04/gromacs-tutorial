@@ -17,7 +17,7 @@ printf "\nNow we need to neutralize our molecule , go to the main topology file 
 gmx grompp -f ions.mdp -c water_box.gro -p 1.top -o ions.tpr
 
 printf "\nNow we assemble the tpr file and time to neutralize our system.\n"
-gmx genion -s ions.tpr -o water_ions.gro -p 1.top -pname NA -nname CL -neutral 13
+gmx genion -s ions.tpr -o water_ions.gro -p 1.top -pname NA -nname CL -neutral
 
 printf "\nSelect the solvent system (SOL) after you run the above command.\n"
 
