@@ -1,7 +1,7 @@
 #!/bin/bash
 start=`date +%s`
 
-gmx pdb2gmx -f 1d01_singlechain.pdb -o 1.gro -p 1.top -water spce
+gmx pdb2gmx -f 1d01_singlechain.pdb -o 1.gro -p 1.top -water spce -ff oplsaa
 15
 
 printf "\nUse SPDBV to repair missing atoms.\n"
