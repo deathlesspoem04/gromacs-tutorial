@@ -12,10 +12,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: update packages
-      run: |
-        sudo apt update
-        sudo apt-get upgrade
+#     - name: update packages
+#       run: |
+#         sudo apt update
+#         sudo apt-get upgrade
     
     # set up gcc
     - name: install gcc
@@ -39,7 +39,7 @@ jobs:
       
     # Runs the main script script
     - name: Run script
-      run: ../../run.sh
+      run: sh ./run.sh
       
     - name: Commit files
       id: commit
