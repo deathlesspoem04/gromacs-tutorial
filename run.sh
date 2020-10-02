@@ -42,7 +42,7 @@ gmx grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p 1.top -o npt.tpr
 gmx mdrun -deffnm npt
 
 printf "\nNow run the simulation command:\n"
-gmx grompp -f md.mdp -c npt.gro -t npt .cpt -p 1.top -o full_md.tpr
+gmx grompp -f md.mdp -c npt.gro -t npt.cpt -p 1.top -o full_md.tpr
 
 gmx mdrun -deffnm full_md
 
