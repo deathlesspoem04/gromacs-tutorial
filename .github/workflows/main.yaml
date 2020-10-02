@@ -39,7 +39,7 @@ jobs:
       
     # Runs the main script script
     - name: Run script
-      run: sh ./run.sh
+      run: sh ./config.sh
       
     - name: Commit files
       id: commit
