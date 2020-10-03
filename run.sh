@@ -47,12 +47,12 @@ gmx grompp -f md.mdp -c npt.gro -t npt.cpt -p 1.top -o full_md.tpr
 gmx mdrun -deffnm full_md
 
 printf "\nNow we can make the RMSD graph:\n"
-gmx rms -s full_md.tpr -f full_md1.xtc -o rmsd.xvg
+gmx rms -s full_md.tpr -f full_md.xtc -o rmsd.xvg
 
 printf "\nSimilarly for RMSF and gyrate:\n"
-gmx rmsf -s full_md.tpr -f full_md1.xtc -res -o rmsf.xvg
+gmx rmsf -s full_md.tpr -f full_md.xtc -res -o rmsf.xvg
 
-gmx gyrate -s full_md.tpr -f full_md1.xtc -o gyr.xvg
+gmx gyrate -s full_md.tpr -f full_md.xtc -o gyr.xvg
 
 printf "\nWe can change these .xvg files to .csv and visualize the graph\n"
 
