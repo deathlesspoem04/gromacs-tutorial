@@ -29,7 +29,7 @@ printf "\nNow we have created the system, now it's time to run the  MD(Molecular
 gmx mdrun -v -s energyminimization.tpr -deffnm em  
 
 printf "\nNow, energy has been minimized. We can see the graph by running:\n"
-gmx energy -f em.edr -o potential.xvg
+# gmx energy -f em.edr -o potential.xvg
 
 printf "\nWe now stabilize our system:\n"
 gmx grompp -f nvt.mdp -c em.gro -r em.gro -p 1.top -o nvt.tpr
