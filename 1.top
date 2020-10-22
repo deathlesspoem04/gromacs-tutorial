@@ -1,0 +1,375 @@
+;
+;	File '1.top' was generated
+;	By user: unknown (1001)
+;	On host: fv-az59-224
+;	At date: Thu Oct 22 19:24:52 2020
+;
+;	This is a standalone topology file
+;
+;	Created by:
+;	            :-) GROMACS - gmx pdb2gmx, 2020.1-Ubuntu-2020.1-1 (-:
+;	
+;	Executable:   /usr/bin/gmx
+;	Data prefix:  /usr
+;	Working dir:  /home/runner/work/gromacs-tutorial/gromacs-tutorial
+;	Command line:
+;	  gmx pdb2gmx -f 1d01_singlechain.pdb -o 1.gro -p 1.top -water spce -ff oplsaa
+;	Force field was read from the standard GROMACS share directory.
+;
+
+; Include forcefield parameters
+#include "oplsaa.ff/forcefield.itp"
+
+[ moleculetype ]
+; Name            nrexcl
+Protein_chain_A     3
+
+[ atoms ]
+;   nr       type  resnr residue  atom   cgnr     charge       mass  typeB    chargeB      massB
+; residue   1 CYS rtp CYSH q +1.0
+     1   opls_287      1    CYS      N      1       -0.3    14.0027
+     2   opls_290      1    CYS     H1      1       0.33      1.008
+     3   opls_290      1    CYS     H2      1       0.33      1.008
+     4   opls_290      1    CYS     H3      1       0.33      1.008
+     5  opls_293B      1    CYS     CA      1       0.25     12.011
+     6   opls_140      1    CYS     HA      1       0.06      1.008
+     7   opls_206      1    CYS     CB      2       0.06     12.011
+     8   opls_140      1    CYS    HB1      2       0.06      1.008
+     9   opls_140      1    CYS    HB2      2       0.06      1.008
+    10   opls_200      1    CYS     SG      3     -0.335      32.06
+    11   opls_204      1    CYS     HG      3      0.155      1.008
+    12   opls_235      1    CYS      C      4        0.5     12.011
+    13   opls_236      1    CYS      O      4       -0.5    15.9994   ; qtot 1
+; residue   2 CYS rtp CYSH q  0.0
+    14   opls_238      2    CYS      N      5       -0.5    14.0067
+    15   opls_241      2    CYS      H      5        0.3      1.008
+    16  opls_224B      2    CYS     CA      5       0.14     12.011
+    17   opls_140      2    CYS     HA      5       0.06      1.008
+    18   opls_206      2    CYS     CB      6       0.06     12.011
+    19   opls_140      2    CYS    HB1      6       0.06      1.008
+    20   opls_140      2    CYS    HB2      6       0.06      1.008
+    21   opls_200      2    CYS     SG      7     -0.335      32.06
+    22   opls_204      2    CYS     HG      7      0.155      1.008
+    23   opls_235      2    CYS      C      8        0.5     12.011
+    24   opls_236      2    CYS      O      8       -0.5    15.9994   ; qtot 1
+; residue   3 CYS rtp CYSH q -1.0
+    25   opls_238      3    CYS      N      9       -0.5    14.0067
+    26   opls_241      3    CYS      H      9        0.3      1.008
+    27   opls_283      3    CYS     CA      9       0.04     12.011
+    28   opls_140      3    CYS     HA      9       0.06      1.008
+    29   opls_206      3    CYS     CB     10       0.06     12.011
+    30   opls_140      3    CYS    HB1     10       0.06      1.008
+    31   opls_140      3    CYS    HB2     10       0.06      1.008
+    32   opls_200      3    CYS     SG     11     -0.335      32.06
+    33   opls_204      3    CYS     HG     11      0.155      1.008
+    34   opls_271      3    CYS      C     12        0.7     12.011
+    35   opls_272      3    CYS     O1     12       -0.8    15.9994
+    36   opls_272      3    CYS     O2     12       -0.8    15.9994   ; qtot 0
+
+[ bonds ]
+;  ai    aj funct            c0            c1            c2            c3
+    1     2     1 
+    1     3     1 
+    1     4     1 
+    1     5     1 
+    5     6     1 
+    5     7     1 
+    5    12     1 
+    7     8     1 
+    7     9     1 
+    7    10     1 
+   10    11     1 
+   12    13     1 
+   12    14     1 
+   14    15     1 
+   14    16     1 
+   16    17     1 
+   16    18     1 
+   16    23     1 
+   18    19     1 
+   18    20     1 
+   18    21     1 
+   21    22     1 
+   23    24     1 
+   23    25     1 
+   25    26     1 
+   25    27     1 
+   27    28     1 
+   27    29     1 
+   27    34     1 
+   29    30     1 
+   29    31     1 
+   29    32     1 
+   32    33     1 
+   34    35     1 
+   34    36     1 
+
+[ pairs ]
+;  ai    aj funct            c0            c1            c2            c3
+    1     8     1 
+    1     9     1 
+    1    10     1 
+    1    13     1 
+    1    14     1 
+    2     6     1 
+    2     7     1 
+    2    12     1 
+    3     6     1 
+    3     7     1 
+    3    12     1 
+    4     6     1 
+    4     7     1 
+    4    12     1 
+    5    11     1 
+    5    15     1 
+    5    16     1 
+    6     8     1 
+    6     9     1 
+    6    10     1 
+    6    13     1 
+    6    14     1 
+    7    13     1 
+    7    14     1 
+    8    11     1 
+    8    12     1 
+    9    11     1 
+    9    12     1 
+   10    12     1 
+   12    17     1 
+   12    18     1 
+   12    23     1 
+   13    15     1 
+   13    16     1 
+   14    19     1 
+   14    20     1 
+   14    21     1 
+   14    24     1 
+   14    25     1 
+   15    17     1 
+   15    18     1 
+   15    23     1 
+   16    22     1 
+   16    26     1 
+   16    27     1 
+   17    19     1 
+   17    20     1 
+   17    21     1 
+   17    24     1 
+   17    25     1 
+   18    24     1 
+   18    25     1 
+   19    22     1 
+   19    23     1 
+   20    22     1 
+   20    23     1 
+   21    23     1 
+   23    28     1 
+   23    29     1 
+   23    34     1 
+   24    26     1 
+   24    27     1 
+   25    30     1 
+   25    31     1 
+   25    32     1 
+   25    35     1 
+   25    36     1 
+   26    28     1 
+   26    29     1 
+   26    34     1 
+   27    33     1 
+   28    30     1 
+   28    31     1 
+   28    32     1 
+   28    35     1 
+   28    36     1 
+   29    35     1 
+   29    36     1 
+   30    33     1 
+   30    34     1 
+   31    33     1 
+   31    34     1 
+   32    34     1 
+
+[ angles ]
+;  ai    aj    ak funct            c0            c1            c2            c3
+    2     1     3     1 
+    2     1     4     1 
+    2     1     5     1 
+    3     1     4     1 
+    3     1     5     1 
+    4     1     5     1 
+    1     5     6     1 
+    1     5     7     1 
+    1     5    12     1 
+    6     5     7     1 
+    6     5    12     1 
+    7     5    12     1 
+    5     7     8     1 
+    5     7     9     1 
+    5     7    10     1 
+    8     7     9     1 
+    8     7    10     1 
+    9     7    10     1 
+    7    10    11     1 
+    5    12    13     1 
+    5    12    14     1 
+   13    12    14     1 
+   12    14    15     1 
+   12    14    16     1 
+   15    14    16     1 
+   14    16    17     1 
+   14    16    18     1 
+   14    16    23     1 
+   17    16    18     1 
+   17    16    23     1 
+   18    16    23     1 
+   16    18    19     1 
+   16    18    20     1 
+   16    18    21     1 
+   19    18    20     1 
+   19    18    21     1 
+   20    18    21     1 
+   18    21    22     1 
+   16    23    24     1 
+   16    23    25     1 
+   24    23    25     1 
+   23    25    26     1 
+   23    25    27     1 
+   26    25    27     1 
+   25    27    28     1 
+   25    27    29     1 
+   25    27    34     1 
+   28    27    29     1 
+   28    27    34     1 
+   29    27    34     1 
+   27    29    30     1 
+   27    29    31     1 
+   27    29    32     1 
+   30    29    31     1 
+   30    29    32     1 
+   31    29    32     1 
+   29    32    33     1 
+   27    34    35     1 
+   27    34    36     1 
+   35    34    36     1 
+
+[ dihedrals ]
+;  ai    aj    ak    al funct            c0            c1            c2            c3            c4            c5
+    2     1     5     6     3 
+    2     1     5     7     3 
+    2     1     5    12     3 
+    3     1     5     6     3 
+    3     1     5     7     3 
+    3     1     5    12     3 
+    4     1     5     6     3 
+    4     1     5     7     3 
+    4     1     5    12     3 
+    1     5     7    10     3    dih_CYS_chi1_N_C_C_S
+   12     5     7    10     3    dih_CYS_chi1_CO_C_C_S
+    1     5     7     8     3 
+    1     5     7     9     3 
+    6     5     7     8     3 
+    6     5     7     9     3 
+    6     5     7    10     3 
+   12     5     7     8     3 
+   12     5     7     9     3 
+    1     5    12    13     3 
+    1     5    12    14     3 
+    6     5    12    13     3 
+    6     5    12    14     3 
+    7     5    12    13     3 
+    7     5    12    14     3 
+    5     7    10    11     3 
+    8     7    10    11     3 
+    9     7    10    11     3 
+    5    12    14    15     3 
+    5    12    14    16     3 
+   13    12    14    15     3 
+   13    12    14    16     3 
+   12    14    16    17     3 
+   12    14    16    18     3 
+   12    14    16    23     3 
+   15    14    16    17     3 
+   15    14    16    18     3 
+   15    14    16    23     3 
+   14    16    18    21     3    dih_CYS_chi1_N_C_C_S
+   23    16    18    21     3    dih_CYS_chi1_CO_C_C_S
+   14    16    18    19     3 
+   14    16    18    20     3 
+   17    16    18    19     3 
+   17    16    18    20     3 
+   17    16    18    21     3 
+   23    16    18    19     3 
+   23    16    18    20     3 
+   14    16    23    24     3 
+   14    16    23    25     3 
+   17    16    23    24     3 
+   17    16    23    25     3 
+   18    16    23    24     3 
+   18    16    23    25     3 
+   16    18    21    22     3 
+   19    18    21    22     3 
+   20    18    21    22     3 
+   16    23    25    26     3 
+   16    23    25    27     3 
+   24    23    25    26     3 
+   24    23    25    27     3 
+   23    25    27    28     3 
+   23    25    27    29     3 
+   23    25    27    34     3 
+   26    25    27    28     3 
+   26    25    27    29     3 
+   26    25    27    34     3 
+   25    27    29    32     3    dih_CYS_chi1_N_C_C_S
+   34    27    29    32     3    dih_CYS_chi1_CO_C_C_S
+   25    27    29    30     3 
+   25    27    29    31     3 
+   28    27    29    30     3 
+   28    27    29    31     3 
+   28    27    29    32     3 
+   34    27    29    30     3 
+   34    27    29    31     3 
+   25    27    34    35     3 
+   25    27    34    36     3 
+   28    27    34    35     3 
+   28    27    34    36     3 
+   29    27    34    35     3 
+   29    27    34    36     3 
+   27    29    32    33     3 
+   30    29    32    33     3 
+   31    29    32    33     3 
+
+[ dihedrals ]
+;  ai    aj    ak    al funct            c0            c1            c2            c3
+    5    14    12    13     1    improper_O_C_X_Y
+   12    16    14    15     1    improper_Z_N_X_Y
+   16    25    23    24     1    improper_O_C_X_Y
+   23    27    25    26     1    improper_Z_N_X_Y
+   27    35    34    36     1    improper_O_C_X_Y
+
+; Include Position restraint file
+#ifdef POSRES
+#include "posre.itp"
+#endif
+
+; Include water topology
+#include "oplsaa.ff/spce.itp"
+
+#ifdef POSRES_WATER
+; Position restraint for each water oxygen
+[ position_restraints ]
+;  i funct       fcx        fcy        fcz
+   1    1       1000       1000       1000
+#endif
+
+; Include topology for ions
+#include "oplsaa.ff/ions.itp"
+
+[ system ]
+; Name
+Protein in water
+
+[ molecules ]
+; Compound        #mols
+Protein_chain_A     1
+SOL              1063
