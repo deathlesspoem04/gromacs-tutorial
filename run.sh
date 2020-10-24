@@ -14,7 +14,7 @@ printf "\nAdd the solvent system:\n"
 gmx solvate -cp box.gro -cs spc216.gro -o water_box.gro -p 1.top
 
 printf "\nNow we need to neutralize our molecule , go to the main topology file (1.top) , find qtot and see if its +ve or -ve , we need to add the exactly opposite charge quantity to neutralize it.\n"
-gmx grompp -f ions.mdp -c water_box.gro -p 1.top -o ions.tpr
+gmx grompp -f ions.mdp -c water_box.gro -p 1.top -o ions.tpr -maxwarn
 
 printf "\nNow we assemble the tpr file and time to neutralize our system.\n"
 gmx genion -s ions.tpr -o water_ions.gro -p 1.top -pname NA -nname CL -neutral
