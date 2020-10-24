@@ -2,7 +2,7 @@
 start=`date +%s`
 
 printf "\nUse SPDBV to repair missing atoms.\n"
-gmx pdb2gmx -f 1d01_singlechain.pdb -o 1.gro -p 1.top -water spce -ff oplsaa
+gmx pdb2gmx -f 1d01_singlechain.pdb -o 1.gro -p 1.top -water spce -ff gromos53a6
 
 # printf "\nUse this command while working to ignore the hydrogen atoms if consisted, because it generates few complications while compiling in later phases: \n"
 # gmx pdb2gmx -f 1d01_singlechain.pdb -o 1.gro -p 1.top -water spce -ignh
