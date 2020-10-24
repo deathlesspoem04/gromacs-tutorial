@@ -8,7 +8,7 @@ gmx pdb2gmx -f 1d01_singlechain.pdb -o 1.gro -p 1.top -water spce -ff gromos53a6
 # gmx pdb2gmx -f 1d01_singlechain.pdb -o 1.gro -p 1.top -water spce -ignh
 
 printf "\nEmbed the protein in a Cubic Box for simulation:\n"
-gmx editconf -f 1.gro -o box.gro -c -d 1.0 -bt cubic
+gmx editconf -f 1.gro -o box.gro -c -d 1.0 -bt dodecahedron
 
 printf "\nAdd the solvent system:\n"
 gmx solvate -cp box.gro -cs spc216.gro -o water_box.gro -p 1.top
