@@ -23,7 +23,7 @@ printf "\nSelect the solvent system (SOL) after you run the above command.\n"
 
 
 printf "\nNow we do Energy Minimization :\n"
-gmx grompp -f minim.mdp -c water_ions.gro -p 1.top -o energyminimization.tpr
+gmx grompp -f minim.mdp -c water_ions.gro -p 1.top -o energyminimization.tpr -maxwarn 10
 
 printf "\nNow we have created the system, now it's time to run the  MD(Molecular Dynamics) command:\n"
 gmx mdrun -v -s energyminimization.tpr -deffnm em  
@@ -32,17 +32,17 @@ printf "\nNow, energy has been minimized. We can see the graph by running:\n"
 # gmx energy -f em.edr -o potential.xvg
 
 printf "\nWe now stabilize our system:\n"
-gmx grompp -f nvt.mdp -c em.gro -r em.gro -p 1.top -o nvt.tpr
+gmx grompp -f nvt.mdp -c em.gro -r em.gro -p 1.top -o nvt.tpr -maxwarn 10
 
 gmx mdrun -deffnm nvt
 
 printf "\nNow, the temperature is completely stable, now its time to stabilize the Pressure\n"
-gmx grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p 1.top -o npt.tpr
+gmx grompp -f npt.mdp -c nvt.gro -r nvt.gro -t nvt.cpt -p 1.top -o npt.tpr -maxwarn 10
 
 gmx mdrun -deffnm npt
 
 printf "\nNow run the simulation command:\n"
-gmx grompp -f md.mdp -c npt.gro -t npt.cpt -p 1.top -o full_md.tpr
+gmx grompp -f md.mdp -c npt.gro -t npt.cpt -p 1.top -o full_md.tpr -maxwarn 10
 
 gmx mdrun -deffnm full_md
 
